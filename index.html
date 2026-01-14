@@ -32,6 +32,10 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
+        
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
     </style>
 </head>
 <body class="bg-bright min-h-screen text-slate-800">
@@ -119,15 +123,35 @@
                 </div>
             </a>
 
-            <button onclick="openLogin()" class="btn-hover-effect bg-gradient-to-r from-orange-400 to-orange-500 p-6 rounded-3xl shadow-xl flex items-center justify-between text-black group border border-orange-300">
-    <div class="text-left">
-        <h3 class="text-xl font-bold text-black group-hover:text-slate-700 transition-colors">EPI BACKEND</h3>
-        <p class="text-slate-800 text-sm mt-1">เข้าสู่ระบบจัดการข้อมูลหลังบ้าน</p>
-    </div>
-    <div class="bg-black/10 p-3 rounded-2xl group-hover:bg-black/20 transition-all">
-        <i class="fas fa-shield-alt text-3xl text-black"></i>
-    </div>
-	</button>
+            <a href="https://script.google.com/macros/s/AKfycbyNIa7iKIUOE9M37EQ2HiRaiyrCCe2ht6m46UIYPREZc8MU4fNDbJjCBr56ksj8sbe5ww/exec" target="_blank" 
+               class="btn-hover-effect bg-white p-6 rounded-3xl border border-slate-100 shadow-lg group relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-rose-500"></div>
+                <div class="flex items-center justify-between z-10 relative">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-700 group-hover:text-rose-600 transition-colors">ค้นประวัติรับวัคซีน</h3>
+                        <p class="text-sm text-slate-400 mt-1">ตรวจสอบประวัติรายบุคคล</p>
+                    </div>
+                    <div class="bg-rose-50 p-3 rounded-2xl group-hover:bg-rose-500 transition-colors duration-300">
+                        <i class="fas fa-search text-3xl text-rose-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                </div>
+            </a>
+
+            <button onclick="openLogin()" class="md:col-span-2 lg:col-span-3 mt-4 btn-hover-effect bg-gradient-to-r from-orange-400 to-orange-500 p-6 rounded-3xl shadow-xl flex items-center justify-between text-black group border border-orange-300">
+                <div class="text-left flex items-center gap-4">
+                    <div class="bg-black/10 p-3 rounded-2xl group-hover:bg-black/20 transition-all">
+                        <i class="fas fa-shield-alt text-3xl text-black"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-black group-hover:text-slate-800 transition-colors">EPI BACKEND SYSTEM</h3>
+                        <p class="text-slate-900/70 text-sm mt-1">เข้าสู่ระบบจัดการข้อมูลหลังบ้าน (สำหรับเจ้าหน้าที่)</p>
+                    </div>
+                </div>
+                <div class="bg-white/20 p-2 rounded-full px-4">
+                    <span class="text-sm font-semibold">เข้าสู่ระบบ <i class="fas fa-arrow-right ml-2"></i></span>
+                </div>
+            </button>
+            
         </div>
     </div>
 
@@ -230,7 +254,7 @@
                         <i class="fas fa-chevron-right"></i>
                     </div>
                  <a href="https://script.google.com/macros/s/AKfycbxRhK06YtxmNEamZUBaDlTw7cQ3Ulli9iheIjc1bN7jpNf3jnlDixUPDQWEz3vJLNjS/exec" target="_blank" 
-                   class="group flex items-center p-4 bg-orange-50 rounded-2xl border border-orange-100 hover:border-orange-400 hover:shadow-md hover:shadow-orange-100 transition-all duration-300 relative overflow-hidden">
+                    class="group flex items-center p-4 bg-orange-50 rounded-2xl border border-orange-100 hover:border-orange-400 hover:shadow-md hover:shadow-orange-100 transition-all duration-300 relative overflow-hidden">
                     <div class="absolute right-0 top-0 opacity-10 transform translate-x-4 -translate-y-4">
                         <i class="fas fa-carrot text-8xl text-orange-500"></i>
                     </div>
@@ -244,7 +268,7 @@
                     <div class="ml-auto bg-white rounded-full p-2 text-orange-400 group-hover:translate-x-1 transition-transform z-10 shadow-sm">
                         <i class="fas fa-chevron-right"></i>
                     </div>
-				</a>
+                </a>
 
             </div>
         </div>
@@ -254,7 +278,6 @@
         function openLogin() {
             const loginSection = document.getElementById('loginSection');
             loginSection.classList.remove('hidden');
-            // Animation class handled by Tailwind transition
             setTimeout(() => {
                 loginSection.classList.remove('opacity-0');
             }, 10);
@@ -297,7 +320,7 @@
         function showMenu() {
             document.getElementById('loginSection').classList.add('hidden');
             const mainDash = document.getElementById('mainDashboard');
-            mainDash.classList.add('blur-sm', 'scale-95', 'opacity-50'); // Effect on background
+            mainDash.classList.add('blur-sm', 'scale-95', 'opacity-50'); 
             
             const menuSec = document.getElementById('menuSection');
             menuSec.classList.remove('hidden');
